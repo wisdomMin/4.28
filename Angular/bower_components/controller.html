@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.min.js"></script>
+</head>
+<body ng-app="myapp"> <!-- ng-app angular的作用区域 -->
+    <div ng-controller="control">
+        <input type="text" ng-model="aa"> <!-- angular里的模板引擎用两个花括号-->
+        <input type="text" ng-model="aa">
+    </div>
+</body>
+<script>
+    angular.module("myapp",[]).controller("control",['$scope',function($scope){
+        $scope.aa=10; //通过控制器把相应的数据放到相应的视图中 通过控制器实现双向数据绑定 将数据放到$scope上才能映射在视图中
+    }]); //启用自定义应用要手动去启动它 []是依赖注入的作用 $scope区间 也是依赖注入 只有是它才有意义
+    //ng-repeat="item in data" 循环 ng-click=""
+</script>
+</html>
